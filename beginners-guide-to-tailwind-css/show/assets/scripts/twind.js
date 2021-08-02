@@ -7,7 +7,7 @@ setup({
     theme: {
         fontFamily: {
             body: ['Manrope', 'sans-serif'],
-            display: ['DM Sans', 'sans-serif'],
+            display: ['Sen', 'sans-serif'],
             code: ['DM Mono', 'monospace'],
         },
         container: {
@@ -15,8 +15,9 @@ setup({
         },
         colors: {
             gray: colors.blueGray,
-            primary: colors.indigo,
-            secondary: colors.orange,
+            primary: '#63D2FF',
+            secondary: '#FF99B9',
+            white: '#FFF'
         }
     }
 })
