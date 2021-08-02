@@ -31,9 +31,10 @@
 
     <script type="module" src="/beginners-guide-to-tailwind-css/show/assets/scripts/index.js"></script>
     <link rel="stylesheet" href="https://cdn.skypack.dev/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles/github-dark.css">
     <link rel="stylesheet" href="/beginners-guide-to-tailwind-css/show/assets/styles/index.css">
 </head>
-<body class="bg-gray-900 font-body text-white">
+<body class="bg-gray-900 font-body text-white text-lg leading-normal">
     <div class="py-0.5 bg-primary"></div>
     <div class="reveal">
         <div class="slides">
@@ -57,29 +58,44 @@
                 <h1 class="text-primary font-bold text-5xl">Introduction</h1>
             </section>
 
-            <!-- What is CSS? -->
+            <!-- Early CSS Era -->
             <section>
-                <section id="what-is-css" class="h-full p-20">
-                    <h1 class="text-primary font-bold text-5xl">What is CSS?</h1>
+                <section id="early-css-era" class="h-full p-20">
+                    <div class="flex flex-col items-center">
+                        <h1 class="text-primary font-bold text-5xl mb-14">Early CSS Era</h1>
+                        <img class="w-[30rem]" src="https://i1.wp.com/css-tricks.com/wp-content/uploads/2017/10/screengrab_css-violaWWW.png?ssl=1" alt="pre css era">
+                    </div>
                 </section>
                 
                 <!-- websites preview -->
-                <section id="with-and-without-css" class="h-full">
-                    <div class="grid grid-cols-2 place-items-center h-full transform-gpu scale-125">
-                        <img src="/beginners-guide-to-tailwind-css/show/assets/img/what-is-css/withCSS.png" alt="website with css">
-                        <img src="/beginners-guide-to-tailwind-css/show/assets/img/what-is-css/withoutCSS.png" alt="website without css">
+                <section id="with-and-without-css" class="h-full p-20">
+                    <div class="flex flex-col items-center">
+                        <p>During the 1990s HTML 3.5 introduced with formatting tags<br>which made it more complex for developers to create websites <br> resulting in the creation of Cascading Stylesheet.</p>
+                    
+                        <img class="mt-8" src="/beginners-guide-to-tailwind-css/show/assets/img/early-css-era/css-sample.png" alt="css code sample">
                     </div>
                 </section>
             </section>
 
             <!-- The emergence of CSS frameworks -->
             <section id="the-emergence-of-css-frameworks" class="h-full p-20">
-                <h1 class="text-primary font-bold text-5xl">The emergence of CSS frameworks</h1>
+                <h1 class="text-primary font-bold text-5xl leading-relax mb-16">The emergence of CSS frameworks</h1>
+                <p class="mb-8">To prevent re-inventing HTML elements, or writing the same styles again & again, CSS frameworks that provided pre-defined styling emerged.</p>
+                <div class="flex flex-col items-center">
+                    <img class="max-w-[30rem] mb-8" src="/beginners-guide-to-tailwind-css/show/assets/img/the-emergence-of-css-frameworks/bootstrap-button-code.png" alt="bootstrap button code">
+                    <img class="max-w-[30rem]" src="/beginners-guide-to-tailwind-css/show/assets/img/the-emergence-of-css-frameworks/bootstrap-buttons.png" alt="example bootstrap buttons">
+                </div>
             </section>
 
             <!-- A revolutionary CSS framework -->
             <section id="a-revolutionary-css-framework" class="h-full p-20">
-                <h1 class="text-primary font-bold text-5xl">A revolutionary CSS framework</h1>
+                <h1 class="text-primary font-bold text-5xl mb-16">A revolutionary CSS framework</h1>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-primary font-bold text-2xl">Bootstrap</h3>
+                    <img class="max-w-[33rem]" src="/beginners-guide-to-tailwind-css/show/assets/img/a-revolutionary-css-framework/bootstrap-code.png" alt="bootstrap example button">
+                    <h3 class="text-primary font-bold text-2xl mt-4">Tailwind</h3>
+                    <img class="max-w-[33rem]" src="/beginners-guide-to-tailwind-css/show/assets/img/a-revolutionary-css-framework/tailwind-code.png" alt="tailwind example button">
+                </div>
             </section>
 
             <!-- Why use Tailwind CSS? -->
