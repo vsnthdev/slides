@@ -1,0 +1,53 @@
+@font-face {
+    font-weight: 900;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-Black.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 800;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 600;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 400;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 300;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 200;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+    font-weight: 100;
+    font-family: "Basically A Sans Serif";
+    src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-Thin.woff2') format('woff2');
+}
