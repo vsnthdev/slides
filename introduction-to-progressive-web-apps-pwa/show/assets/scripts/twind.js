@@ -11,8 +11,15 @@ setup({
         container: {
             center: true
         },
-        colors: {
-            white: '#FFF'
+        extend: {
+            colors: {
+                white: '#FFF',
+                background: '#FFFFFF',
+                'g-blue': '#4285f4',
+                'g-green': '#34a853',
+                'g-yellow': '#fbbc05',
+                'g-red': '#ea4335'
+            }
         }
     }
 })

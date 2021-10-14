@@ -51,3 +51,10 @@
     font-family: "Basically A Sans Serif";
     src: url('/introduction-to-progressive-web-apps-pwa/show/assets/fonts/BasicallyASansSerif-Thin.woff2') format('woff2');
 }
+
+body {
+    background-size: 8em 8em;
+    background-image:
+        linear-gradient(rgba(148,163,184, 0.06) 0.2em, transparent 0.1em),
+        linear-gradient(90deg, rgba(148,163,184, 0.06) 0.2em, transparent 0.1em);
+}
