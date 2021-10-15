@@ -91,3 +91,7 @@ body {
 #installation-and-testing img {
     height: 18rem;
 }
+
+#about-me .avatar {
+    height: 8rem;
+}
