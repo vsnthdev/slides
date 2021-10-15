@@ -55,8 +55,8 @@
 body {
     background-size: 8em 8em;
     background-image:
-        linear-gradient(rgba(148,163,184, 0.06) 0.2em, transparent 0.1em),
-        linear-gradient(90deg, rgba(148,163,184, 0.06) 0.2em, transparent 0.1em);
+        linear-gradient(rgba(148,163,184, 0.08) 0.2em, transparent 0.1em),
+        linear-gradient(90deg, rgba(148,163,184, 0.08) 0.2em, transparent 0.1em);
 }
 
 .reveal .progress {

@@ -13,6 +13,7 @@ setup({
         },
         extend: {
             colors: {
+                gray: colors.blueGray,
                 white: '#FFF',
                 background: '#FFFFFF',
                 'g-blue': '#4285f4',
