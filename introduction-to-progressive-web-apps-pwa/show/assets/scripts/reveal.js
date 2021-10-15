@@ -5,7 +5,7 @@ const deck = new Reveal({
     center: false,
     hash: true,
     progress: true,
-    transition: 'convex',
+    transition: 'concave',
     plugins: [
         Markdown
     ]

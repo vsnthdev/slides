@@ -58,3 +58,28 @@ body {
         linear-gradient(rgba(148,163,184, 0.06) 0.2em, transparent 0.1em),
         linear-gradient(90deg, rgba(148,163,184, 0.06) 0.2em, transparent 0.1em);
 }
+
+.reveal .progress {
+    background-color: transparent;
+    height: 6px;
+}
+
+.reveal .progress span {
+    background-color: #4285f4;
+}
+
+#what-we-will-building .desktop {
+    height: 25rem;
+}
+
+#what-we-will-building .app {
+    height: 28rem;
+}
+
+#what-are-pwa img {
+    height: 20rem;
+}
+
+#perks-of-progressive-web-apps img {
+    height: 20rem;
+}
