@@ -6,6 +6,7 @@ const deck = new Reveal({
     hash: true,
     progress: true,
     transition: 'concave',
+    backgroundTransition: 'zoom',
     plugins: [
         Markdown
     ]
