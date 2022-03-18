@@ -1,3 +1,7 @@
+*::selection {
+    background-color: #fce7f3;
+}
+
 .reveal .progress {
     background-color: transparent;
     height: 6px;
