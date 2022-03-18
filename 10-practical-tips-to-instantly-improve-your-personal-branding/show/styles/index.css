@@ -6,3 +6,11 @@
 .reveal .progress span {
     background-color: #115aeb;
 }
+
+.controls-arrow::before {
+    color: #115aeb;
+}
+
+.controls-arrow::after {
+    color: #7020cc;
+}

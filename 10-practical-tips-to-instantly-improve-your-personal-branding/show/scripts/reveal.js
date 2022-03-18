@@ -5,7 +5,9 @@ const deck = new Reveal({
     hash: true,
     progress: true,
     transition: 'fade',
-    transitionSpeed: 'fast'
+    transitionSpeed: 'fast',
+    hideCursorTime: 500,
+    controlsTutorial: false
 })
 
 deck.initialize()
