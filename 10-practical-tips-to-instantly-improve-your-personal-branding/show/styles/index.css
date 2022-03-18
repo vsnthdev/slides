@@ -1,0 +1,8 @@
+.reveal .progress {
+    background-color: transparent;
+    height: 6px;
+}
+
+.reveal .progress span {
+    background-color: #115aeb;
+}
