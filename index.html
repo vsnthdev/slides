@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides — Vasanth Srivatsa</title>
+
+    <link rel="icon" type="image/png" sizes="any" href="https://try.vsnth.dev/assets/img/site_icon.png">
+    <script src="https://cdn.tailwindcss.com/3.0.23"></script>
+    <link rel="stylesheet" href="https://vyaktitva.vercel.app/assets/css/fonts.css">
+    <script type="module" src="https://unpkg.com/vyaktitva/dist/vyaktitva/vyaktitva.esm.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Basically A Sans Serif', 'sans-serif']
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex flex-col items-center h-screen bg-slate-100 text-slate-800">
+    <!-- the header -->
+    <v-header brand="Vasanth Srivatsa" class="bg-white w-full border-b-2 border-light-200 dark:bg-dark-800 dark:border-dark-700"></v-header>
+
+    <!-- page content -->
+    <div class="w-full max-w-5xl px-8">
+        <div class="py-16 flex flex-col space-y-4">
+            <p class="text-5xl font-bold">Presentations I create for different events I speak on.</p>
+        </div>
+        <div class="flex flex-col space-y-12">
+            <article>
+                <div>
+                    <a class="text-3xl font-bold hover:underline" href="/beginners-guide-to-tailwind-css">Beginner's Guide To TailwindCSS</a>
+                    <span class="font-medium text-slate-500 text-lg">Dev'Street</span>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <a class="text-3xl font-bold hover:underline" href="/introduction-to-progressive-web-apps-pwa">Introduction To Progressive Web Apps (PWAs)</a>
+                    <span class="font-medium text-slate-500 text-lg">GDSC</span>
+                </div>
+            </article>
+            <article>
+                <div>
+                    <a class="text-3xl font-bold hover:underline" href="/9-practical-tips-to-instantly-improve-your-personal-branding">9 Practical Tips To Instantly Improve your Personal Branding</a>
+                    <span class="font-medium text-slate-500 text-lg">MLSA</span>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <v-footer brand="Vasanth Srivatsa" class="mt-auto w-full bg-white border-t-2 border-light-200 dark:bg-dark-800 dark:border-dark-700 hydrated"></v-footer>
+</body>
+</html>
