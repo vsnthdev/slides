@@ -8,8 +8,8 @@ import axios from 'https://cdn.skypack.dev/axios'
 export default async selector => {
     const { data } = await axios({
         method: 'GET',
-        url: 'https://api.vsnth.dev'
+        url: 'https://vsnth.dev/api'
     })
 
-    selector.textContent = data.bio
+    selector.textContent = data.bio.short
 }
