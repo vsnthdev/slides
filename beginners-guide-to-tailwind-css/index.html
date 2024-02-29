@@ -1,14 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" hidden>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>Beginner's Guide To TailwindCSS | Slideshow — Vasanth Developer</title>
-    
-    <meta http-equiv="refresh" content="0;url=/beginners-guide-to-tailwind-css/show">
+    <meta name="title" content="Beginner's Guide To TailwindCSS | Slideshow — Vasanth Developer">
+    <meta name="description" content="A talk I've given on 2nd August 2021 on how students can get started with Tailwind CSS in the event organized by DevsStreet.">
+    <link rel="icon" href="/beginners-guide-to-tailwind-css/show/assets/img/siteIcon.png" type="image/png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://slides.vasanthdeveloper.com/beginners-guide-to-tailwind-css/show">
+    <meta property="og:title" content="Beginner's Guide To TailwindCSS | Slideshow — Vasanth Developer">
+    <meta property="og:description" content="A talk I've given on 2nd August 2021 on how students can get started with Tailwind CSS in the event organized by DevsStreet.">
+    <meta property="og:image" content="/beginners-guide-to-tailwind-css/show/assets/img/cover.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://slides.vasanthdeveloper.com/beginners-guide-to-tailwind-css/show">
+    <meta property="twitter:title" content="Beginner's Guide To TailwindCSS | Slideshow — Vasanth Developer">
+    <meta property="twitter:description" content="A talk I've given on 2nd August 2021 on how students can get started with Tailwind CSS in the event organized by DevsStreet.">
+    <meta property="twitter:image" content="/beginners-guide-to-tailwind-css/show/assets/img/cover.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&family=Sen:wght@400;700&family=Manrope:wght@400;700&display=swap">
+
+    <script type="module" src="/beginners-guide-to-tailwind-css/show/assets/scripts/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.skypack.dev/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles/github-dark.css">
+    <link rel="stylesheet" href="/beginners-guide-to-tailwind-css/show/assets/styles/index.css">
 </head>
-<body>
+<body class="bg-gray-900 font-body text-white text-lg leading-normal">
+    <div class="py-0.5 bg-primary"></div>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title -->
+            <section id="title" class="h-full p-20">
+                <div class="h-full flex flex-col justify-center items-center">
+                    <div class="flex flex-col font-display text-5xl mb-20">
+                        <h1 class="text-primary font-bold">Beginner's Guide To Tailwind CSS</h1>
+                        <span class="text-3xl mt-6">& Designing Simple Card UI</span>
+                    </div>
     
+                    <div class="flex justify-around text-sm w-full">
+                        <span>2nd August 2021</span>
+                        <span class="text-secondary border-b-2 border-secondary"><a href="https://www.instagram.com/devs.street" target="_blank" rel="noopener">DevsStreet</a></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Early CSS Era -->
+            <section>
+                <section id="early-css-era" class="h-full p-20">
+                    <div class="flex flex-col items-center">
+                        <h1 class="text-primary font-bold text-5xl mb-14">Early CSS Era</h1>
+                        <img class="w-[30rem]" src="https://i1.wp.com/css-tricks.com/wp-content/uploads/2017/10/screengrab_css-violaWWW.png?ssl=1" alt="pre css era">
+                    </div>
+                </section>
+                
+                <!-- websites preview -->
+                <section id="with-and-without-css" class="h-full p-20">
+                    <div class="flex flex-col items-center">
+                        <p>During the 1990s HTML 3.5 introduced with formatting tags<br>which made it more complex for developers to create websites <br> resulting in the creation of Cascading Stylesheet.</p>
+                    
+                        <img class="mt-8" src="/beginners-guide-to-tailwind-css/show/assets/img/early-css-era/css-sample.png" alt="css code sample">
+                    </div>
+                </section>
+            </section>
+
+            <!-- The emergence of CSS frameworks -->
+            <section id="the-emergence-of-css-frameworks" class="h-full p-20">
+                <h1 class="text-primary font-bold text-5xl leading-relax mb-8">The emergence of CSS frameworks</h1>
+                <p class="mb-8">To prevent re-inventing HTML elements, or writing the same styles again & again, CSS frameworks that provided pre-defined styling emerged.</p>
+                <div class="flex flex-col items-center">
+                    <img class="max-w-[35rem] mb-8" src="/beginners-guide-to-tailwind-css/show/assets/img/the-emergence-of-css-frameworks/bootstrap-button-code.png" alt="bootstrap button code">
+                    <img class="max-w-[30rem] p-2 bg-white rounded-md" src="/beginners-guide-to-tailwind-css/show/assets/img/the-emergence-of-css-frameworks/bootstrap-buttons.png" alt="example bootstrap buttons">
+                </div>
+            </section>
+
+            <!-- A revolutionary CSS framework -->
+            <section id="a-revolutionary-css-framework" class="h-full p-20">
+                <h1 class="text-primary font-bold text-5xl mb-16">A revolutionary CSS framework</h1>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-primary font-bold text-2xl">Bootstrap</h3>
+                    <img class="max-w-[33rem]" src="/beginners-guide-to-tailwind-css/show/assets/img/a-revolutionary-css-framework/bootstrap-code.png" alt="bootstrap example button">
+                    <h3 class="text-primary font-bold text-2xl mt-4">Tailwind</h3>
+                    <img class="max-w-[33rem]" src="/beginners-guide-to-tailwind-css/show/assets/img/a-revolutionary-css-framework/tailwind-code.png" alt="tailwind example button">
+                </div>
+            </section>
+
+            <!-- Why use Tailwind CSS? -->
+            <section id="why-use-tailwind-css" class="h-full p-20">
+                <h1 class="text-primary font-bold text-5xl">Why use Tailwind CSS?</h1>
+                <div class="flex flex-col items-center justify-center h-full">
+                    <p class="text-xl">Faster designing & smaller bundles</p>
+                    <p class="text-8xl">=</p>
+                    <img class="max-w-[20rem]" src="https://media.giphy.com/media/QXPmPdudTz4So2P4OQ/giphy.gif" alt="wow!">
+                </div>
+            </section>
+
+            <!-- The Gotchas -->
+            <section id="the-gotchas">
+                <section class="h-full p-20">
+                    <h1 class="text-primary font-bold text-5xl">The Gotchas</h1>
+
+                    <div class="grid grid-cols-2 -mx-20 mt-8 h-full -mt-10 place-items-center">
+                        <div>
+                            <p class="text-xl">HTML looks like this</p>
+                            <img class="min-w-[40rem]" src="/beginners-guide-to-tailwind-css/show/assets/img/the-gotchas/html-verbose.png" alt="html is a mess">
+                        </div>
+                        <div>
+                            <p class="text-xl">My face when I see HTML</p>
+                            <img class="max-w-[15rem]" src="https://media1.tenor.com/images/bd20e5d81473c2edb1f9f9aaf88f74e1/tenor.gif?itemid=13712192" alt="I'm confused'">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="h-full p-20">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <p class="text-xl">Faster designing & smaller bundles</p>
+                        <p class="text-8xl">=</p>
+                        <img class="max-w-[20rem]" src="https://media.giphy.com/media/QXPmPdudTz4So2P4OQ/giphy.gif" alt="wow!">
+                    </div>
+                </section>
+            </section>
+
+            <!-- Surprise! -->
+            <section id="surprise" class="h-full p-20">
+                <h1 class="text-primary font-bold text-5xl">Did you know?</h1>
+                <div class="flex flex-col justify-center items-center h-full -mt-8">
+                    <p class="text-3xl mb-8">This presentation was made using Tailwind CSS</p>
+                    <p class="text-6xl mb-8">😎</p>
+                    <p class="text-2xl">Check it out at <a class="ml-2 text-secondary border-b-2 border-secondary" href="https://vasanth.tech/wvv3">https://vas.cx/wvv3</a></p>
+                </div>
+            </section>
+
+            <!-- Designing simple card UI with Tailwind CSS -->
+            <section id="designing-simple-card-ui-with-tailwind-css" class="h-full p-20">
+                <div class="flex justify-center items-center h-full">
+                    <h1 class="text-primary font-bold text-5xl leading-relaxed">Let's get to design! 🤘</h1>
+                </div>
+            </section>
+
+            <!-- Thank you -->
+            <section id="thank-you" class="h-full p-20">
+                <div class="flex flex-col justify-center items-center h-full">
+                    <h1 class="text-primary font-bold text-5xl mb-4">Thank you!</h1>
+                    <p class="mb-4">Thank you to Devs' Street for giving me this opportunity!</p>
+                    <p class="text-5xl">😊</p>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
