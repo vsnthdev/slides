@@ -1,0 +1,40 @@
+{
+    "name": "slides",
+    "description": "Presentations I create for different events I speak on.",
+    "version": "1.0.0",
+    "license": "Zlib",
+    "private": true,
+    "homepage": "https://try.vsnth.dev",
+    "author": {
+        "name": "Vasanth Developer",
+        "email": "hey@vsnth.dev",
+        "url": "https://vsnth.dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vsnthdev/try.git"
+    },
+    "scripts": {
+        "dev": "next dev",
+        "clean": "rimraf .next out"
+    },
+    "dependencies": {
+        "@notionhq/client": "^2.2.14",
+        "change-case": "^5.4.3",
+        "next-seo": "^6.5.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.60",
+        "autoprefixer": "^10.4.17",
+        "encoding": "^0.1.13",
+        "lucide-react": "^0.343.0",
+        "next": "^14.1.0",
+        "rimraf": "^5.0.5",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.3.3",
+        "vercel": "^33.5.3",
+        "vyaktitva": "^1.1.1"
+    }
+}

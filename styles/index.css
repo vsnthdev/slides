@@ -1,0 +1,31 @@
+/*
+ *  Entry stylesheet file for try project.
+ *  Created On 24 October 2022
+ */
+
+/* TailwindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* full height and flex for Next.js */
+#__next {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* additional base customizations */
+@layer base {
+    :host {
+        display: block;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    *::-webkit-scrollbar {
+        display: none;
+    }
+}
