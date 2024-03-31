@@ -6,7 +6,7 @@
 import Link from "next/link";
 import Image from 'next/image'
 import { Slide } from "../../utils/notion";
-import { ClapperboardIcon, ClockIcon, HandshakeIcon, PlayIcon, UsersRoundIcon, YoutubeIcon } from "lucide-react";
+import { ClapperboardIcon, ClockIcon, HandshakeIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from "lucide-react";
 
 function DynamicallyLink({ link, children }: { children: React.ReactNode, link?: string }) {
     if (link) {
@@ -71,10 +71,10 @@ export function Slide({ slide }: { slide: Slide }) {
 
             {/* desktop actions */}
             <div className='space-x-4 hidden md:flex'>
-                {/* <button className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
-                    <BadgeInfoIcon className='size-5' />
-                    <span>Know more</span>
-                </button> */}
+                {slide.presentationLink && <Link href={slide.presentationLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
+                    <PresentationIcon className="size-5" />
+                    <span>Present now</span>
+                </Link>}
                 {slide.videoLink && <Link href={slide.videoLink} className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-red-500 hover:bg-red-600 transform-gpu active:scale-95'>
                     <YoutubeIcon className='size-5' />
                     <span>Watch now</span>
@@ -83,11 +83,11 @@ export function Slide({ slide }: { slide: Slide }) {
         </div>
 
         {/* mobile actions */}
-        {/* <div className='flex flex-col md:hidden'>
-            <button className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
-                <BadgeInfoIcon className='size-5' />
-                <span>Know more</span>
-            </button>
-        </div> */}
+        {slide.presentationLink && <div className='flex flex-col md:hidden'>
+            <Link href={slide.presentationLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
+                <PresentationIcon className="size-5" />
+                <span>Present now</span>
+            </Link>
+        </div>}
     </article>
 }
