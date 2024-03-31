@@ -23,9 +23,9 @@ export function Slide({ slide }: { slide: Slide }) {
         <DynamicallyLink link={slide.videoLink}>
             <div className='relative flex -z-20'>
                 <div className='absolute inset-0 flex items-center justify-center md:hidden'>
-                    <div className='size-14 rounded-full text-black bg-white flex items-center justify-center shadow-xl'>
+                    {slide.videoLink && <div className='size-14 rounded-full text-black bg-white flex items-center justify-center shadow-xl'>
                         <PlayIcon />
-                    </div>
+                    </div>}
                 </div>
 
                 <Image src={slide.imageUrl} alt={slide.title} width={1280} height={720} className='rounded-md md:max-w-lg' />
