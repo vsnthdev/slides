@@ -10,18 +10,17 @@ const notion = new Client({
     auth: process.env.NOTION_TOKEN
 })
 
-interface Slide {
-    for: string
-    type: string
-    title: string
-    duration: string
-    imageUrl: string
-    videoLink: string
-    presentedOn: string
-    description: string
-    audianceSize: string
-    presentationLink: string
-    sessionType: 'Virtual' | 'Physical'
+export interface Slide {
+    for?: string
+    title?: string
+    duration?: string
+    imageUrl?: string
+    videoLink?: string
+    presentedOn?: string
+    description?: string
+    audianceSize?: string
+    presentationLink?: string
+    sessionType?: 'Virtual' | 'Physical'
 }
 
 export async function getSlides() {
