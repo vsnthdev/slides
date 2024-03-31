@@ -5,6 +5,6 @@
 
 import './reveal.js'
 import './tailwind.web.js'
-import getDescription from '../../../introduction-to-progressive-web-apps-pwa/show/assets/scripts/description.js'
+import getDescription from '../../introduction-to-progressive-web-apps-pwa/assets/scripts/description.js'
 
 window.addEventListener('load', async () => await getDescription(document.querySelector('#bio')))
