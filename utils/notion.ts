@@ -11,11 +11,17 @@ const notion = new Client({
 })
 
 interface Slide {
-    title: string
-    type: string
-    link: string
     for: string
+    type: string
+    title: string
+    duration: string
+    imageUrl: string
+    videoLink: string
     presentedOn: string
+    description: string
+    audianceSize: string
+    presentationLink: string
+    sessionType: 'Virtual' | 'Physical'
 }
 
 export async function getSlides() {
@@ -57,6 +63,11 @@ export async function getSlides() {
 
             if (value.type == 'date') {
                 slide[camelCase(key)] = value.date.start
+                continue
+            }
+
+            if (value.type == 'number') {
+                slide[camelCase(key)] = value.number
                 continue
             }
 
