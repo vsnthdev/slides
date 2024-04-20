@@ -19,22 +19,22 @@
         "clean": "rimraf .next out"
     },
     "dependencies": {
-        "@notionhq/client": "^2.2.14",
-        "change-case": "^5.4.3",
+        "@notionhq/client": "^2.2.15",
+        "change-case": "^5.4.4",
         "next-seo": "^6.5.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@types/react": "^18.2.73",
+        "@types/react": "^18.2.79",
         "autoprefixer": "^10.4.19",
         "encoding": "^0.1.13",
-        "lucide-react": "^0.363.0",
-        "next": "^14.1.4",
+        "lucide-react": "^0.372.0",
+        "next": "^14.2.2",
         "rimraf": "^5.0.5",
         "tailwindcss": "^3.4.3",
-        "typescript": "^5.4.3",
-        "vercel": "^33.6.2",
+        "typescript": "^5.4.5",
+        "vercel": "^34.1.1",
         "vyaktitva": "1.2.3"
     }
 }
