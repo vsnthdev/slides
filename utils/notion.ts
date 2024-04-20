@@ -5,6 +5,7 @@
 
 import { Client } from '@notionhq/client'
 import { camelCase } from 'change-case'
+import { parseDate } from './date'
 
 const notion = new Client({
     auth: process.env.NOTION_TOKEN
@@ -16,7 +17,7 @@ export interface Slide {
     duration?: string
     imageUrl?: string
     videoLink?: string
-    presentedOn?: string
+    presentedOn?: Date
     description?: string
     audianceSize?: string
     presentationLink?: string
@@ -61,7 +62,7 @@ export async function getSlides() {
             }
 
             if (value.type == 'date') {
-                slide[camelCase(key)] = value.date.start
+                slide[camelCase(key)] = parseDate(value.date.start)
                 continue
             }
 
@@ -76,5 +77,5 @@ export async function getSlides() {
         slides.push(slide)
     }
 
-    return slides
+    return slides.sort((a, b) => b.presentedOn.valueOf() - a.presentedOn.valueOf())
 }
