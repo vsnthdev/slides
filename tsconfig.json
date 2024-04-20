@@ -18,6 +18,7 @@
         "isolatedModules": true,
         "jsx": "preserve",
         "moduleResolution": "Node",
+        "strictNullChecks": false,
         "plugins": [
             {
                 "name": "next"
