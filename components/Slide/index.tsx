@@ -5,7 +5,7 @@
 
 import Link from "next/link";
 import Image from 'next/image'
-import { Slide } from "../../utils/notion";
+import { type Slide } from "../../utils/notion";
 import { ClapperboardIcon, ClockIcon, HandshakeIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from "lucide-react";
 
 function DynamicallyLink({ link, children }: { children: React.ReactNode, link?: string }) {
