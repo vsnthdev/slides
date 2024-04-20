@@ -23,7 +23,8 @@
         "change-case": "^5.4.4",
         "next-seo": "^6.5.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "serverless-utilities": "^0.0.22"
     },
     "devDependencies": {
         "@types/react": "^18.2.79",
