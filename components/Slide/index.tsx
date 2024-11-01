@@ -6,7 +6,7 @@
 import Link from "next/link";
 import Image from 'next/image'
 import { type Slide } from "../../utils/notion";
-import { ClapperboardIcon, ClockIcon, HandshakeIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from "lucide-react";
+import { ClapperboardIcon, ClockIcon, HandshakeIcon, ImageIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from "lucide-react";
 
 function DynamicallyLink({ link, children }: { children: React.ReactNode, link?: string }) {
     if (link) {
@@ -78,6 +78,10 @@ export function Slide({ slide }: { slide: Slide }) {
                 {slide.videoLink && <Link href={slide.videoLink} className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-red-500 hover:bg-red-600 transform-gpu active:scale-95'>
                     <YoutubeIcon className='size-5' />
                     <span>Watch now</span>
+                </Link>}
+                {slide.photosLink && <Link href={slide.photosLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-blue-500 hover:bg-blue-600 transform-gpu active:scale-95'>
+                    <ImageIcon className="size-5" />
+                    <span>See photos</span>
                 </Link>}
             </div>
         </div>

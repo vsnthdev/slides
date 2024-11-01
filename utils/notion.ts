@@ -18,6 +18,7 @@ export interface Slide {
     imageUrl?: string
     videoLink?: string
     presentedOn?: Date
+    photosLink?: string
     description?: string
     audianceSize?: string
     presentationLink?: string
