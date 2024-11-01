@@ -87,11 +87,15 @@ export function Slide({ slide }: { slide: Slide }) {
         </div>
 
         {/* mobile actions */}
-        {slide.presentationLink && <div className='flex flex-col md:hidden'>
-            <Link href={slide.presentationLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
+        <div className='flex flex-col gap-y-4 md:hidden'>
+            {slide.presentationLink && <Link href={slide.presentationLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
                 <PresentationIcon className="size-5" />
                 <span>Present now</span>
-            </Link>
-        </div>}
+            </Link>}
+            {slide.photosLink && <Link href={slide.photosLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-blue-500 hover:bg-blue-600 transform-gpu active:scale-95'>
+                <PresentationIcon className="size-5" />
+                <span>Present now</span>
+            </Link>}
+        </div>
     </article>
 }
