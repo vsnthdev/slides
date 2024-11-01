@@ -45,7 +45,7 @@ export function Slide({ slide }: { slide: Slide }) {
         [0.5, 1, 0.8]
     )
 
-    return <motion.article ref={cardRef} style={{ scale, opacity }} className='flex flex-col'>
+    return <motion.article ref={cardRef} style={{ scale, opacity }} className='flex flex-col transform-gpu'>
         <DynamicallyLink link={slide.videoLink}>
             <div className='relative flex -z-20'>
                 <div className='absolute inset-0 flex items-center justify-center md:hidden'>
@@ -120,7 +120,7 @@ export function Slide({ slide }: { slide: Slide }) {
             </Link>}
             {slide.photosLink && <Link href={slide.photosLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-blue-500 hover:bg-blue-600 transform-gpu active:scale-95'>
                 <PresentationIcon className="size-5" />
-                <span>Present now</span>
+                <span>See photos</span>
             </Link>}
         </div>
     </motion.article>
