@@ -57,10 +57,10 @@
             animation: special-border-rotation 8s linear infinite;
         }
 
-        .special-border::after {
+        /* .special-border::after {
             filter: blur(3.5rem);
             opacity: 0.2;
-        }
+        } */
 
         @keyframes special-border-rotation {
             0% {
