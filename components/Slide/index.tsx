@@ -4,12 +4,13 @@
  *  Created On 31 March 2024
  */
 
-import Link from "next/link";
+import Link from 'next/link'
 import Image from 'next/image'
-import { type Slide } from "../../utils/notion";
-import { ClapperboardIcon, ClockIcon, HandshakeIcon, ImageIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from "lucide-react";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { type Slide } from '../../utils/notion'
+import { ClapperboardIcon, ClockIcon, HandshakeIcon, ImageIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from 'lucide-react'
+import { useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import mixpanel from 'mixpanel-browser'
 
 function DynamicallyLink({ link, children }: { children: React.ReactNode, link?: string }) {
     if (link) {
@@ -25,10 +26,21 @@ export function Slide({ slide }: { slide: Slide }) {
     // HOOKS
     const cardRef = useRef<HTMLDivElement>(null)
 
+    useEffect(() => {
+        mixpanel.init(
+            '43229caf3ce6296117cdaf01998a340f',
+            {
+                ignore_dnt: true,
+                persistence: 'localStorage',
+                track_pageview: 'url-with-path-and-query-string',
+            }
+        )
+    }, [])
+
     const { scrollYProgress } = useScroll({
         axis: 'y',
         target: cardRef,
-        offset: ["start end", "center center", "end start"]
+        offset: ['start end', 'center center', 'end start']
     })
 
     const curve = [0, 0.5, 1]
@@ -97,16 +109,16 @@ export function Slide({ slide }: { slide: Slide }) {
 
             {/* desktop actions */}
             <div className='space-x-4 hidden md:flex'>
-                {slide.presentationLink && <Link href={slide.presentationLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
-                    <PresentationIcon className="size-5" />
+                {slide.presentationLink && <Link href={slide.presentationLink} target='_blank' className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
+                    <PresentationIcon className='size-5' />
                     <span>Present now</span>
                 </Link>}
                 {slide.videoLink && <Link href={slide.videoLink} className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-red-500 hover:bg-red-600 transform-gpu active:scale-95'>
                     <YoutubeIcon className='size-5' />
                     <span>Watch now</span>
                 </Link>}
-                {slide.photosLink && <Link href={slide.photosLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-blue-500 hover:bg-blue-600 transform-gpu active:scale-95'>
-                    <ImageIcon className="size-5" />
+                {slide.photosLink && <Link href={slide.photosLink} target='_blank' className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-blue-500 hover:bg-blue-600 transform-gpu active:scale-95'>
+                    <ImageIcon className='size-5' />
                     <span>See photos</span>
                 </Link>}
             </div>
@@ -114,12 +126,12 @@ export function Slide({ slide }: { slide: Slide }) {
 
         {/* mobile actions */}
         <div className='flex flex-col gap-y-4 md:hidden'>
-            {slide.presentationLink && <Link href={slide.presentationLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
-                <PresentationIcon className="size-5" />
+            {slide.presentationLink && <Link href={slide.presentationLink} target='_blank' className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
+                <PresentationIcon className='size-5' />
                 <span>Present now</span>
             </Link>}
-            {slide.photosLink && <Link href={slide.photosLink} target="_blank" className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-blue-500 hover:bg-blue-600 transform-gpu active:scale-95'>
-                <PresentationIcon className="size-5" />
+            {slide.photosLink && <Link href={slide.photosLink} target='_blank' className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all bg-blue-500 hover:bg-blue-600 transform-gpu active:scale-95'>
+                <PresentationIcon className='size-5' />
                 <span>See photos</span>
             </Link>}
         </div>
