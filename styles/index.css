@@ -28,4 +28,48 @@
     *::-webkit-scrollbar {
         display: none;
     }
+
+    @property --gradient-angle {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+
+    .special-border {
+        position: relative;
+    }
+
+    /* Only apply effects at md breakpoint (768px) and above */
+    @media (min-width: 768px) {
+        .special-border::before,
+        .special-border::after {
+            content: "";
+            position: absolute;
+            inset: -0.1rem;
+            z-index: -1;
+            background: conic-gradient(from var(--gradient-angle),
+                #404040,
+                #404040,
+                #ffffff,
+                #404040,
+                #404040);
+            border-radius: inherit;
+            animation: special-border-rotation 8s linear infinite;
+        }
+
+        .special-border::after {
+            filter: blur(3.5rem);
+            opacity: 0.2;
+        }
+
+        @keyframes special-border-rotation {
+            0% {
+                --gradient-angle: 0deg;
+            }
+            
+            100% {
+                --gradient-angle: 360deg;
+            }
+        }
+    }
 }

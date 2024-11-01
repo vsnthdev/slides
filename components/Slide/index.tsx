@@ -1,3 +1,4 @@
+'use client'
 /*
  *  A component that represents a session.
  *  Created On 31 March 2024
@@ -7,6 +8,8 @@ import Link from "next/link";
 import Image from 'next/image'
 import { type Slide } from "../../utils/notion";
 import { ClapperboardIcon, ClockIcon, HandshakeIcon, ImageIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 function DynamicallyLink({ link, children }: { children: React.ReactNode, link?: string }) {
     if (link) {
@@ -19,7 +22,30 @@ function DynamicallyLink({ link, children }: { children: React.ReactNode, link?:
 }
 
 export function Slide({ slide }: { slide: Slide }) {
-    return <article className='flex flex-col'>
+    // HOOKS
+    const cardRef = useRef<HTMLDivElement>(null)
+
+    const { scrollYProgress } = useScroll({
+        axis: 'y',
+        target: cardRef,
+        offset: ["start end", "center center", "end start"]
+    })
+
+    const curve = [0, 0.5, 1]
+
+    const scale = useTransform(
+        scrollYProgress,
+        curve,
+        [0.8, 1, 0.8]
+    )
+
+    const opacity = useTransform(
+        scrollYProgress,
+        curve,
+        [0.5, 1, 0.8]
+    )
+
+    return <motion.article ref={cardRef} style={{ scale, opacity }} className='flex flex-col'>
         <DynamicallyLink link={slide.videoLink}>
             <div className='relative flex -z-20'>
                 <div className='absolute inset-0 flex items-center justify-center md:hidden'>
@@ -32,7 +58,7 @@ export function Slide({ slide }: { slide: Slide }) {
             </div>
         </DynamicallyLink>
 
-        <div className='py-6 flex flex-col space-y-4 md:rounded-xl md:bg-stone-800 md:border md:border-stone-700 md:-mt-14 md:ml-24 md:px-8 md:py-8 lg:px-10 lg:py-10'>
+        <div className={`py-6 flex flex-col space-y-4 md:rounded-xl md:-mt-14 md:ml-24 md:px-8 md:py-8 lg:px-10 lg:py-10 special-border md:bg-neutral-900`}>
             {/* event & session title */}
             <div className='flex flex-col space-y-1'>
                 {slide.for && <p className='font-medium opacity-70 md:text-lg'>{slide.for}</p>}
@@ -97,5 +123,5 @@ export function Slide({ slide }: { slide: Slide }) {
                 <span>Present now</span>
             </Link>}
         </div>
-    </article>
+    </motion.article>
 }
