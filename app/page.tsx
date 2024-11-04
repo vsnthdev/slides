@@ -4,7 +4,8 @@
  */
 
 import { getSlides } from '../utils/notion'
-import { Slide } from '../components/Slide/index';
+import { Slide } from '../components/Slide/index'
+import { Mixpanel } from '../components/Mixpanel'
 
 export const revalidate = 60
 
@@ -23,10 +24,12 @@ export default async function Page() {
                     </h1>
                 </div>
 
-                <div className='flex flex-col space-y-12 md:space-y-20'>
-                    {slides.map(slide => <Slide key={slide.title} slide={slide} />)}
+                <div className='flex flex-col space-y-12 relative md:space-y-20'>
+                    {slides.map((slide, index) => <Slide index={index} key={slide.title} slide={slide} />)}
                 </div>
             </div>
         </main>
+
+        <Mixpanel />
     </>
 }
