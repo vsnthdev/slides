@@ -71,7 +71,7 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                     <Image priority={index <= 2} src={slide.imageUrl} alt={slide.title} width={1280} height={720} className='rounded-md md:max-w-lg' />
                 </div>
             </DynamicallyLink>
-            <div className={`py-6 flex flex-col space-y-4 md:rounded-xl md:-mt-14 md:ml-24 md:px-8 md:py-8 lg:px-10 lg:py-10 special-border md:bg-neutral-900`}>
+            <div className={`py-6 flex flex-col space-y-4 md:rounded-xl md:-mt-14 md:ml-24 md:px-8 md:py-8 lg:px-10 lg:py-10 special-border md:bg-neutral-900/95 md:backdrop-blur-2xl md:border md:border-purple-500/20 md:shadow-[0_8px_32px_rgba(0,0,0,0.3)]`}>
                 {/* event & session title */}
                 <div className='flex flex-col space-y-1'>
                     {slide.for && <p className='font-medium opacity-70 md:text-lg'>{slide.for}</p>}

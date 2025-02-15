@@ -5,7 +5,7 @@
 
 import '../styles/index.css'
 import { Metadata, Viewport } from 'next'
-import { Footer, Header } from '../components'
+import { Footer, Header, Background } from '../components'
 
 export const viewport: Viewport = {
     themeColor: '#292524',
@@ -62,6 +62,9 @@ export default function RootLayout({
             <link rel='stylesheet' href='https://vyaktitva.vercel.app/assets/css/fonts.css' />
         </head>
         <body className='flex flex-col text-white bg-neutral-900 selection:bg-white/20'>
+            {/* background */}
+            <Background />
+
             {/* header */}
             <Header />
 
