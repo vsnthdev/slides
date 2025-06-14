@@ -80,7 +80,7 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                             transition={{
                                 duration: 0.3,
-                                delay: 0.4,
+                                delay: 0.6,
                             }}
                             className='size-14 rounded-full text-black bg-white flex items-center justify-center shadow-xl'>
                             <PlayIcon />
@@ -91,7 +91,7 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                         animate={isInView ? imageAfter : imageBefore}
                         transition={{
                             duration: 0.3,
-                            delay: 0.3,
+                            delay: 0.5,
                         }}>
                         <Image priority={index <= 2} src={slide.imageUrl} alt={slide.title} width={1280} height={720} className='rounded-md md:max-w-lg' />
                     </motion.div>
@@ -103,7 +103,7 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                 animate={isInView ? cardAfter : cardBefore}
                 transition={{
                     duration: 0.3,
-                    delay: 0.4,
+                    delay: 0.6,
                 }}
                 className='py-6 flex flex-col space-y-4 md:rounded-xl md:-mt-14 md:ml-24 md:px-8 md:py-8 lg:px-10 lg:py-10 special-border z-10 md:bg-undertone-950/60 md:backdrop-blur-2xl md:shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:border md:border-undertone-200/20 md:hover:border-undertone-500 md:transition-colors'
             >
@@ -163,7 +163,7 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{
                     duration: 0.3,
-                    delay: 0.4,
+                    delay: 0.6,
                 }} className='flex flex-col gap-y-4 md:hidden'>
                 {slide.presentationLink && <Link href={slide.presentationLink} target='_blank' className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
                     <PresentationIcon className='size-5' />
