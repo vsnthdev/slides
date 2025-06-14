@@ -1,15 +1,7 @@
 'use client'
 
-import { KBar, KBarProvider, Header as VHeader, actions, useKBar } from 'vyaktitva'
-
-function HeaderWrapper() {
-    const { query } = useKBar()
-    return <VHeader brand='Vasanth Srivatsa' onSearch={query.toggle} />
-}
+import { Header as VHeader } from 'vyaktitva'
 
 export function Header() {
-    return <KBarProvider actions={actions}>
-        <KBar />
-        <HeaderWrapper />
-    </KBarProvider>
+    return <VHeader activeId='sessions' />
 }

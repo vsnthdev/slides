@@ -8,8 +8,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { type Slide } from '../../utils/notion'
 import { ClapperboardIcon, ClockIcon, HandshakeIcon, ImageIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from 'lucide-react'
-import { useMemo, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useInView, motion } from 'framer-motion';
+import { useRef } from 'react'
 
 function DynamicallyLink({ link, children }: { children: React.ReactNode, link?: string }) {
     if (link) {
@@ -23,44 +23,36 @@ function DynamicallyLink({ link, children }: { children: React.ReactNode, link?:
 
 export function Slide({ slide, index }: { slide: Slide, index: number }) {
     // HOOKS
-    const cardRef = useRef<HTMLDivElement>(null)
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
 
-    const { scrollYProgress } = useScroll({
-        axis: 'y',
-        target: cardRef,
-        offset: ['start end', 'center center', 'end start'],
-    })
+    const imageBefore = {
+        x: -30,
+        y: -10,
+        opacity: 0,
+    }
 
-    const curve = [0, 0.5, 1]
+    const imageAfter = {
+        x: 0,
+        y: 0,
+        opacity: 1,
+    }
 
-    const scale = useTransform(
-        scrollYProgress,
-        curve,
-        [0.8, 1, 0.8],
-        {
-            clamp: false
-        }
-    )
+    const cardBefore = {
+        x: 30,
+        y: 10,
+        opacity: 0,
+    }
 
-    const opacity = useTransform(
-        scrollYProgress,
-        curve,
-        [0.5, 1, 0.8],
-        {
-            clamp: false
-        }
-    )
+    const cardAfter = {
+        x: 0,
+        y: 0,
+        opacity: 1,
+    }
 
-    const style = useMemo(
-        () => ({
-            scale,
-            opacity,
-        }),
-        [scale, opacity]
-    )
-
-    return <div className="w-full relative overflow-visible space-y-32" style={{ perspective: `1000px` }}>
-        <motion.article transition={{ type: 'spring', bounce: 0 }} ref={cardRef} style={style} className='relative flex flex-col transform-gpu will-change-transform'>
+    return <div
+        className="w-full relative overflow-visible space-y-32">
+        <article className='relative flex flex-col'>
             <DynamicallyLink link={slide.videoLink}>
                 <div className='relative flex -z-20'>
                     <div className='absolute inset-0 flex items-center justify-center md:hidden'>
@@ -68,10 +60,27 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                             <PlayIcon />
                         </div>}
                     </div>
-                    <Image priority={index <= 2} src={slide.imageUrl} alt={slide.title} width={1280} height={720} className='rounded-md md:max-w-lg' />
+                    <motion.div
+                        initial={imageBefore}
+                        animate={isInView ? imageAfter : imageBefore}
+                        transition={{
+                            duration: 0.3,
+                            delay: 0.3,
+                        }}>
+                        <Image priority={index <= 2} src={slide.imageUrl} alt={slide.title} width={1280} height={720} className='rounded-md md:max-w-lg' />
+                    </motion.div>
                 </div>
             </DynamicallyLink>
-            <div className={`py-6 flex flex-col space-y-4 md:rounded-xl md:-mt-14 md:ml-24 md:px-8 md:py-8 lg:px-10 lg:py-10 special-border md:bg-neutral-900/95 md:backdrop-blur-2xl md:border md:border-purple-500/20 md:shadow-[0_8px_32px_rgba(0,0,0,0.3)]`}>
+            <motion.div
+                ref={ref}
+                initial={cardBefore}
+                animate={isInView ? cardAfter : cardBefore}
+                transition={{
+                    duration: 0.3,
+                    delay: 0.4,
+                }}
+                className='py-6 flex flex-col space-y-4 md:rounded-xl md:-mt-14 md:ml-24 md:px-8 md:py-8 lg:px-10 lg:py-10 special-border z-10 md:bg-undertone-950/60 md:backdrop-blur-2xl md:shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:border md:border-undertone-200/20 md:hover:border-undertone-500 md:transition-colors'
+            >
                 {/* event & session title */}
                 <div className='flex flex-col space-y-1'>
                     {slide.for && <p className='font-medium opacity-70 md:text-lg'>{slide.for}</p>}
@@ -120,7 +129,7 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                         <span>See photos</span>
                     </Link>}
                 </div>
-            </div>
+            </motion.div>
             {/* mobile actions */}
             <div className='flex flex-col gap-y-4 md:hidden'>
                 {slide.presentationLink && <Link href={slide.presentationLink} target='_blank' className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
@@ -132,6 +141,6 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                     <span>See photos</span>
                 </Link>}
             </div>
-        </motion.article>
+        </article>
     </div>
 }

@@ -13,5 +13,7 @@ module.exports = {
         "./components/**/*.{ts,tsx,svg}",
         "node_modules/vyaktitva/**/*.{js,ts,jsx,tsx}",
     ],
-    theme: vyaktitva.theme
+    theme: {
+        ...vyaktitva.theme
+    }
 }
