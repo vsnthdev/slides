@@ -10,6 +10,7 @@ import { type Slide } from '../../utils/notion'
 import { ClapperboardIcon, ClockIcon, HandshakeIcon, ImageIcon, PlayIcon, PresentationIcon, UsersRoundIcon, YoutubeIcon } from 'lucide-react'
 import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react'
+import { isMobile } from 'react-device-detect'
 
 function DynamicallyLink({ link, children }: { children: React.ReactNode, link?: string }) {
     if (link) {
@@ -26,25 +27,41 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
 
-    const imageBefore = {
+    const imageBefore = isMobile ? {
+        x: 0,
+        y: 0,
+        opacity: 0,
+    } : {
         x: -30,
         y: -10,
         opacity: 0,
     }
 
-    const imageAfter = {
+    const imageAfter = isMobile ? {
+        x: 0,
+        y: 0,
+        opacity: 1,
+    } : {
         x: 0,
         y: 0,
         opacity: 1,
     }
 
-    const cardBefore = {
+    const cardBefore = isMobile ? {
+        x: 0,
+        y: 0,
+        opacity: 0,
+    } : {
         x: 30,
         y: 10,
         opacity: 0,
     }
 
-    const cardAfter = {
+    const cardAfter = isMobile ? {
+        x: 0,
+        y: 0,
+        opacity: 1,
+    } : {
         x: 0,
         y: 0,
         opacity: 1,
@@ -56,9 +73,18 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
             <DynamicallyLink link={slide.videoLink}>
                 <div className='relative flex -z-20'>
                     <div className='absolute inset-0 flex items-center justify-center md:hidden'>
-                        {slide.videoLink && <div className='size-14 rounded-full text-black bg-white flex items-center justify-center shadow-xl'>
+                        {slide.videoLink && <motion.div
+                            initial={{
+                                opacity: 0,
+                            }}
+                            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                            transition={{
+                                duration: 0.3,
+                                delay: 0.4,
+                            }}
+                            className='size-14 rounded-full text-black bg-white flex items-center justify-center shadow-xl'>
                             <PlayIcon />
-                        </div>}
+                        </motion.div>}
                     </div>
                     <motion.div
                         initial={imageBefore}
@@ -130,8 +156,15 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                     </Link>}
                 </div>
             </motion.div>
+
             {/* mobile actions */}
-            <div className='flex flex-col gap-y-4 md:hidden'>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{
+                    duration: 0.3,
+                    delay: 0.4,
+                }} className='flex flex-col gap-y-4 md:hidden'>
                 {slide.presentationLink && <Link href={slide.presentationLink} target='_blank' className='px-3.5 py-2 select-none flex justify-center space-x-2 items-center rounded-md font-sans font-medium transition-all text-black bg-white hover:bg-stone-200 transform-gpu active:scale-95'>
                     <PresentationIcon className='size-5' />
                     <span>Present now</span>
@@ -140,7 +173,7 @@ export function Slide({ slide, index }: { slide: Slide, index: number }) {
                     <PresentationIcon className='size-5' />
                     <span>See photos</span>
                 </Link>}
-            </div>
+            </motion.div>
         </article>
     </div>
 }
